@@ -1,21 +1,13 @@
-import java.util.Arrays;
-
 public class Main {
-    public static void main(String[] args) {
-        int[] array = {5, 2, 9, 1, 7, 4}; 
-        swapMinMax(array);
-        System.out.println("Отриманий масив після заміни місцями найбільшого та найменшого елементів:");
-        System.out.println(Arrays.toString(array));
-    }
-
+    // Завдання 1
     public static void swapMinMax(int[] array) {
-        if (array == null || array.length < 2) {
+        if (array.length < 2) {
+            System.out.println("Масив повинен містити щонайменше два елементи");
             return;
         }
 
         int minIndex = 0;
         int maxIndex = 0;
-
 
         for (int i = 1; i < array.length; i++) {
             if (array[i] < array[minIndex]) {
@@ -25,9 +17,7 @@ public class Main {
             }
         }
 
-
         int temp = array[minIndex];
         array[minIndex] = array[maxIndex];
         array[maxIndex] = temp;
     }
-}
